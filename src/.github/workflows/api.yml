@@ -1,11 +1,5 @@
 name: API Deployment
 
-env:
-  registryName: lnds2mbdclsducosureg.azurecr.io
-  repositoryName: techexcel/csapi
-  dockerFolderPath: ./src/ContosoSuitesWebAPI
-  tag: ${{github.run_number}}
-
 on:
   push:
     branches: [ main ]
@@ -15,6 +9,13 @@ on:
     paths: src/ContosoSuitesWebAPI/**
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+
+env:
+  registryName: lnds2mbdclsducosureg.azurecr.io
+  repositoryName: techexcel/csapi
+  dockerFolderPath: ./src/ContosoSuitesWebAPI
+  tag: ${{github.run_number}}
+
 jobs:
   build:
 
